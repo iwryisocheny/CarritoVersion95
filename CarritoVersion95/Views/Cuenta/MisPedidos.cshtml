@@ -1,0 +1,44 @@
+﻿@model IEnumerable<CarritoVersion95.Models.Pedido>
+
+@{
+    ViewData["Title"] = "MisPedidos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>MisPedidos</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdPedido)
+            </th>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.PrecioTotal)
+            </th>
+            @*<th></th>*@
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdPedido)
+            </td>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.PrecioTotal)
+            </td>
+            @*  Aca eliminamos un pedido
+                <td>
+                @Html.ActionLink("Cancelar Pedido", "CancelarPedido", "Cuenta", new { id = item.IdPedido })
+                <a class="btn btn-danger" asp-controller="Cuenta" asp-action="CancelarPedido" asp-route-id="@item.IdPedido">Eliminar 2</a>
+            </td>*@
+        </tr>
+}
+    </tbody>
+</table>

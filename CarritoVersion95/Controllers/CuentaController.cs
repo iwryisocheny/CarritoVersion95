@@ -51,9 +51,28 @@ namespace CarritoVersion95.Controllers
 
         public IActionResult MisPedidos()
         {
-            // PROBANDO!
-            return View();
+            var IdUsuarioEnString = HttpContext.Session.GetString("MiSesion");
+            int IdUsuarioEnInt = int.Parse(IdUsuarioEnString);
+
+            var TodosLosPedidos = _context.Pedidos.Where(p => p.IdUsuario == IdUsuarioEnInt);
+
+
+            return View(TodosLosPedidos.ToList<Pedido>());
         }
+
+
+        //Este metodo debe eliminar un pedido
+        //public async Task<IActionResult> CancelarPedidoAsync(int id)
+        //{
+        //    var PedidoACancelar = await _context.Pedidos.FindAsync(id);
+        //    var Items = _context.Items.Where(i => i.IdPedido == id);
+        //    _context.Pedidos.Remove(PedidoACancelar);
+            
+        //    _context.SaveChanges();
+
+
+        //    return RedirectToAction("MisPedidos", "Cuenta");
+        //}
 
     }
 }

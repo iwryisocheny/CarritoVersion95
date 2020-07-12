@@ -11,8 +11,6 @@ namespace CarritoVersion95.Models
     {
         [Key]
         public int IdItem { get; set; }
-
-        [ForeignKey("Pedido")]
         public int IdPedido { get; set; }
         public Pedido pedido { get; set; }
 
