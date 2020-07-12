@@ -1,0 +1,32 @@
+﻿@model CarritoVersion95.Models.Usuario
+
+@{
+    ViewData["Title"] = "MiCuenta";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>MiCuenta</h1>
+
+<div class="card" style="width: 30rem;">
+
+    <div class="card-body">
+        <h5 class="card-title">Cambiar contraseña</h5>
+
+        <form method="post" asp-action="MiCuenta" asp-controller="Cuenta">
+            <div class="form-group">
+                <input type="hidden" asp-for="IdUsuario" />
+                <input type="hidden" asp-for="email" />
+                <div class="form-control">
+                    @Html.DisplayFor(m => m.email)
+                </div>
+
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" placeholder="Nueva contraseña" asp-for="contrasenia" required />
+            </div>
+            <input type="submit" value="Cambiar contraseña" class="btn btn-primary" />
+
+        </form>
+
+    </div>
+</div>

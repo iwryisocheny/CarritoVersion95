@@ -1,0 +1,26 @@
+﻿@inject CarritoVersion95.Servicios.MiServicio Servicio
+
+@{
+    ViewData["Title"] = "MiPanel";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>MiPanel</h1>
+
+<div class="card" style="width: 30rem;">
+
+    <div class="card-body">
+        <h5 class="card-title">Hola @Servicio.ObtenerEmailUsuario()</h5>
+        <p class="card-text">Bienvenido a deTiendas.com</p>
+
+
+        <a class="btn btn-secondary btn-lg btn-block" asp-controller="Cuenta" asp-action="MiCuenta">Cambiar contraseña</a>
+        <a class="btn btn-secondary btn-lg btn-block" asp-controller="Cuenta" asp-action="MisPedidos">Mis Pedidos</a>
+        <a class="btn btn-secondary btn-lg btn-block" asp-controller="Tiendas" asp-action="ListaProductosAPI">Ver productos</a>
+        <a class="btn btn-secondary btn-lg btn-block" asp-controller="Tiendas" asp-action="Carrito">Ir a mi carrito</a>
+
+    </div>
+</div>
+
+
+

@@ -1,0 +1,23 @@
+﻿@inject CarritoVersion95.Servicios.MiServicio Servicio
+
+<ul class="navbar-nav">
+    @if (Servicio.ObtenerEmailUsuario() != null)
+    {
+    <li class="nav-item">
+        @*<a class="nav-link text-dark" asp-action="MiCuenta" asp-controller="Cuenta">Hola @ViewBag.emailusuario !</a>*@
+        <a class="nav-link text-dark" asp-action="MiPanel" asp-controller="Panel">Hola @Servicio.ObtenerEmailUsuario()</a>
+    </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-action="CerrarSesion" asp-controller="Cuenta">Cerrar sesion</a>    
+        </li>
+    }
+    else
+    {
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-action="Registrarse" asp-controller="Login">Registrarse</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-action="Login" asp-controller="Login">Login</a>
+        </li>
+    }
+</ul>

@@ -1,0 +1,48 @@
+﻿@model CarritoVersion95.Models.Usuario
+
+<div class="container">
+    <div class="row justify-content-center align-items-center" style="height:50vh">
+        <div class="col-4">
+            <div class="card">
+                <div class="card-header">Registrarse</div>
+                <div class="card-body">
+                    <form method="post" asp-action="Registrarse" asp-controller="Login">
+                        <div class="form-group">
+                            <input id="emailInput" class="form-control" type="email" placeholder="email" asp-for="email" required />
+                            @*Aca recibimos el mensaje de error que mandamos por controlador con modelstate *@
+                            <span asp-validation-for="email" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input id="contraseniaInput" class="form-control" type="password" placeholder="contraseña" asp-for="contrasenia" required />
+                        </div>
+                        
+                        <input type="submit" value="Registrarse" class="btn btn-primary" />
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+@*<script>
+        // TO DO!!
+
+        function validarNombre() {
+            var inputParaValidar = document.getElementById("emailInput");
+
+            if (inputParaValidar.value == "") {
+                inputParaValidar.setCustomValidity("Debes ingresar tu email");
+            } else {
+                inputParaValidar.setCustomValidity("");
+            }
+
+        }
+
+    </script>*@
+
+

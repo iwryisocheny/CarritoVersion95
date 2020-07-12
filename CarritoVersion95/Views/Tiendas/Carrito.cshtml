@@ -1,0 +1,79 @@
+﻿@model IEnumerable<CarritoVersion95.Models.Item>
+
+@{
+    ViewData["Title"] = "Carrito";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Carrito</h1>
+
+
+
+@if (ViewBag.PrecioTotal != null)
+{
+    <a class="btn btn-primary" asp-controller="Tiendas" asp-action="ListaProductosAPI">Continuar comprando</a>
+
+}
+else
+{
+    <a class="btn btn-primary" asp-controller="Tiendas" asp-action="ListaProductosAPI">Ir a la lista de productos</a>
+}
+
+<br />
+<br />
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Cantidad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Precio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdProducto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdTienda)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreProducto)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cantidad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Precio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdProducto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdTienda)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NombreProducto)
+                </td>
+                <td>
+                    <a class="btn btn-primary" asp-controller="Tiendas" asp-action="EliminarItem" asp-route-idProd="@item.IdProducto">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@if (ViewBag.PrecioTotal != null && ViewBag.PrecioTotal != 0)
+{
+    <div class="w-50 p-3"><p class="font-weight-bold">Precio total: $@ViewBag.PrecioTotal</p></div>
+    if (ViewBag.MsjErrorLoginNecesario == null) { <div class="w-50 p-3"><a class="btn btn-success" asp-controller="Tiendas" asp-action="FinalizarCompra">Finalizar compra</a></div> } else { <div class="alert-danger">Para finalizar la compra necesitas loguearte</div> }
+
+}
+
