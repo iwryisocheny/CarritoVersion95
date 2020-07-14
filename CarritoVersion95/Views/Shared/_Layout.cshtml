@@ -7,6 +7,7 @@
     <title>@ViewData["Title"] - deTodo</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <header>
@@ -27,12 +28,15 @@
 
                         @if (Servicio.ObtenerEmailUsuario() != null)
                         {
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Tiendas" asp-action="Carrito">Carrito</a>
-                            </li>
 
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Panel" asp-action="MiPanel">Mi Panel</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Tiendas" asp-action="Carrito">
+                                   Carrito
+                                </a>
                             </li>
                         }
                     </ul>

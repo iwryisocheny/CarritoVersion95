@@ -57,22 +57,24 @@ namespace CarritoVersion95.Controllers
             var TodosLosPedidos = _context.Pedidos.Where(p => p.IdUsuario == IdUsuarioEnInt);
 
 
+            ////Hacemos las dos busquedas, pedido e items (funciona como un inner join)
+
+            //Pedido pedidoFinalDeBD = await _context.Pedidos.FindAsync(IdPedidoGenerado);
+            //var ListaItemsDelPedido = _context.Items.Where(i => i.IdPedido == IdPedidoGenerado);
+
+
+            //List<Pedido> PedidosCompletos = new List<Pedido>();
+
+            //foreach (var IdUsuarioEnInt in PedidosCompletos)
+            //{
+
+            //}
+
             return View(TodosLosPedidos.ToList<Pedido>());
         }
 
 
-        //Este metodo debe eliminar un pedido
-        //public async Task<IActionResult> CancelarPedidoAsync(int id)
-        //{
-        //    var PedidoACancelar = await _context.Pedidos.FindAsync(id);
-        //    var Items = _context.Items.Where(i => i.IdPedido == id);
-        //    _context.Pedidos.Remove(PedidoACancelar);
-            
-        //    _context.SaveChanges();
 
-
-        //    return RedirectToAction("MisPedidos", "Cuenta");
-        //}
 
     }
 }

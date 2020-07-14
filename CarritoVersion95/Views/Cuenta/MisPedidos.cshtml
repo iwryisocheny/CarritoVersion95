@@ -1,5 +1,6 @@
 ﻿@model IEnumerable<CarritoVersion95.Models.Pedido>
 
+
 @{
     ViewData["Title"] = "MisPedidos";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -24,21 +25,41 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdPedido)
-            </td>
-            
-            <td>
-                @Html.DisplayFor(modelItem => item.PrecioTotal)
-            </td>
-            @*  Aca eliminamos un pedido
+        @foreach (var item in Model)
+        {
+            <tr>
                 <td>
-                @Html.ActionLink("Cancelar Pedido", "CancelarPedido", "Cuenta", new { id = item.IdPedido })
-                <a class="btn btn-danger" asp-controller="Cuenta" asp-action="CancelarPedido" asp-route-id="@item.IdPedido">Eliminar 2</a>
-            </td>*@
-        </tr>
-}
+                    @Html.DisplayFor(modelItem => item.IdPedido)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.PrecioTotal)
+                </td>
+                
+            </tr>
+
+            @*@foreach (var item2 in Model.Items)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item2.Cantidad)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item2.Precio)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item2.IdProducto)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item2.IdTienda)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item2.NombreProducto)
+                    </td>
+
+                </tr>
+            }*@
+
+        }
     </tbody>
 </table>
