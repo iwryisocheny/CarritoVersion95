@@ -4,10 +4,10 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - deTodo</title>
+    <title>deTodo</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/7d94398df4.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
@@ -26,7 +26,7 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Inicio</a>
                         </li>
 
-                        @if (Servicio.ObtenerEmailUsuario() != null)
+                        @*@if (Servicio.ObtenerEmailUsuario() != null)
                         {
 
                             <li class="nav-item">
@@ -38,7 +38,7 @@
                                    Carrito
                                 </a>
                             </li>
-                        }
+                        }*@
                     </ul>
                 </div>
             </div>

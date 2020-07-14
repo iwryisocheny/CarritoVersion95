@@ -10,7 +10,7 @@
     <div class="row justify-content-center align-items-center" style="height:50vh">
         <div class="col-4">
             <div class="card">
-                <div class="card-header">Login</div>
+                <div class="card-header text-center">Login</div>
                 <div class="card-body">
                     <form method="post" asp-action="Login" asp-controller="Login">
                         <div class="form-group">
@@ -23,6 +23,15 @@
 
                     </form>
                 </div>
+
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        No tenés cuenta?
+                        <a class="card-link" asp-action="Registrarse" asp-controller="Login">Registrate</a>
+                    </li>
+                    </ul>
+
+
             </div>
         </div>
     </div>

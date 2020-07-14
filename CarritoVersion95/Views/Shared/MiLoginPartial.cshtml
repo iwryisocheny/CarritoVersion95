@@ -1,23 +1,26 @@
 ﻿@inject CarritoVersion95.Servicios.MiServicio Servicio
 
-<ul class="navbar-nav">
-    @if (Servicio.ObtenerEmailUsuario() != null)
-    {
-    <li class="nav-item">
-        @*<a class="nav-link text-dark" asp-action="MiCuenta" asp-controller="Cuenta">Hola @ViewBag.emailusuario !</a>*@
-        <a class="nav-link text-dark" asp-action="MiPanel" asp-controller="Panel">Hola @Servicio.ObtenerEmailUsuario()</a>
-    </li>
+    <ul class="navbar-nav">
+
+        <a class="nav-link text-dark" asp-action="ListaProductosAPI" asp-controller="Tiendas">
+            <i class="fas fa-store"></i>
+        </a>
+
+        <a class="nav-link text-dark" asp-action="Carrito" asp-controller="Tiendas">
+            <i class="fas fa-shopping-basket"></i>
+        </a>
+
         <li class="nav-item">
-            <a class="nav-link text-dark" asp-action="CerrarSesion" asp-controller="Cuenta">Cerrar sesion</a>    
+            @*<a class="nav-link text-dark" asp-action="MiCuenta" asp-controller="Cuenta">Hola @ViewBag.emailusuario !</a>*@
+            <a class="nav-link text-dark" asp-action="MiPanel" asp-controller="Panel"><i class="fas fa-user-circle"></i></a>
         </li>
-    }
-    else
-    {
-        <li class="nav-item">
-            <a class="nav-link text-dark" asp-action="Registrarse" asp-controller="Login">Registrarse</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link text-dark" asp-action="Login" asp-controller="Login">Login</a>
-        </li>
-    }
-</ul>
+
+        @*Si esta logueado muestro opcion de salir*@
+        @if (Servicio.ObtenerEmailUsuario() != null)
+        {
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-action="CerrarSesion" asp-controller="Cuenta"><i class="fas fa-sign-out-alt"></i></a>
+            </li>
+        }
+        
+    </ul>

@@ -5,19 +5,19 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>MiPanel</h1>
+<h1 class="display-4">Mi Panel</h1>
 
 <div class="card" style="width: 30rem;">
 
     <div class="card-body">
         <h5 class="card-title">Hola @Servicio.ObtenerEmailUsuario()</h5>
-        <p class="card-text">Bienvenido a deTiendas.com</p>
+        <p class="card-text">Bienvenido a deTodo</p>
 
 
         <a class="btn btn-secondary btn-lg btn-block" asp-controller="Cuenta" asp-action="MiCuenta"><i class="fa fa-user-circle"></i> Cambiar contraseña</a>
-        <a class="btn btn-secondary btn-lg btn-block" asp-controller="Cuenta" asp-action="MisPedidos"><i class="fa fa-box-open"></i> Mis Pedidos</a>
-        <a class="btn btn-secondary btn-lg btn-block" asp-controller="Tiendas" asp-action="ListaProductosAPI"><i class="fa fa-store"></i> Ver productos</a>
-        <a class="btn btn-secondary btn-lg btn-block" asp-controller="Tiendas" asp-action="Carrito"><i class="fa fa-shopping-cart"></i> Ir a mi carrito</a>
+        <a class="btn btn-secondary btn-lg btn-block" asp-controller="Cuenta" asp-action="MisPedidos"><i class="fas fa-box-open"></i> Mis Pedidos</a>
+        <a class="btn btn-secondary btn-lg btn-block" asp-controller="Tiendas" asp-action="ListaProductosAPI"><i class="fas fa-store"></i> Ver productos</a>
+        <a class="btn btn-secondary btn-lg btn-block" asp-controller="Tiendas" asp-action="Carrito"><i class="fas fa-shopping-basket"></i> Ir a mi carrito</a>
 
     </div>
 </div>
