@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\iwry\\source\\repos\\CarritoVersion95\\CarritoVersion95\\CarritoVersion95.csproj": {}
+    "C:\\Users\\Cristian Yoo\\Source\\Repos\\CarritoVersion95\\CarritoVersion95\\CarritoVersion95.csproj": {}
   },
   "projects": {
-    "C:\\Users\\iwry\\source\\repos\\CarritoVersion95\\CarritoVersion95\\CarritoVersion95.csproj": {
+    "C:\\Users\\Cristian Yoo\\Source\\Repos\\CarritoVersion95\\CarritoVersion95\\CarritoVersion95.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\iwry\\source\\repos\\CarritoVersion95\\CarritoVersion95\\CarritoVersion95.csproj",
+        "projectUniqueName": "C:\\Users\\Cristian Yoo\\Source\\Repos\\CarritoVersion95\\CarritoVersion95\\CarritoVersion95.csproj",
         "projectName": "CarritoVersion95",
-        "projectPath": "C:\\Users\\iwry\\source\\repos\\CarritoVersion95\\CarritoVersion95\\CarritoVersion95.csproj",
-        "packagesPath": "C:\\Users\\iwry\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\iwry\\source\\repos\\CarritoVersion95\\CarritoVersion95\\obj\\",
+        "projectPath": "C:\\Users\\Cristian Yoo\\Source\\Repos\\CarritoVersion95\\CarritoVersion95\\CarritoVersion95.csproj",
+        "packagesPath": "C:\\Users\\Cristian Yoo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Cristian Yoo\\Source\\Repos\\CarritoVersion95\\CarritoVersion95\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\iwry\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Cristian Yoo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -85,7 +85,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

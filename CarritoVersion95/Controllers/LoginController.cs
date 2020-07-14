@@ -81,7 +81,7 @@ namespace CarritoVersion95.Controllers
             if (user == null)
             {
                 //ModelState.AddModelError("Password", "Invalid login attempt.");
-                return RedirectToAction("Registrarse", "Login");
+                return RedirectToAction("Login", "Login");
             }
 
             var IdUsuario = user.IdUsuario;

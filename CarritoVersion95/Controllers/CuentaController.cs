@@ -49,15 +49,22 @@ namespace CarritoVersion95.Controllers
         }
 
 
-        public IActionResult MisPedidos()
+        public async Task<IActionResult> MisPedidos()
         {
             var IdUsuarioEnString = HttpContext.Session.GetString("MiSesion");
             int IdUsuarioEnInt = int.Parse(IdUsuarioEnString);
-
+            var ListaItemsDelPedido = _context.Items;
             var TodosLosPedidos = _context.Pedidos.Where(p => p.IdUsuario == IdUsuarioEnInt);
 
-
-            ////Hacemos las dos busquedas, pedido e items (funciona como un inner join)
+            var ListaItemsDePedidos = new List<Item>();
+            foreach (var p in TodosLosPedidos) {
+                var Items = _context.Items.Where(i => i.IdPedido == p.IdPedido);
+                foreach (var i in Items) {
+                    ListaItemsDePedidos.Add(i);
+                }
+            }
+            ViewBag.ListaItemsDePedidos = ListaItemsDePedidos;
+            //Hacemos las dos busquedas, pedido e items (funciona como un inner join)
 
             //Pedido pedidoFinalDeBD = await _context.Pedidos.FindAsync(IdPedidoGenerado);
             //var ListaItemsDelPedido = _context.Items.Where(i => i.IdPedido == IdPedidoGenerado);

@@ -15,7 +15,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.IdPedido)
             </th>
-            
+
             <th>
                 @Html.DisplayNameFor(model => model.PrecioTotal)
             </th>
@@ -23,41 +23,37 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model)
+        @foreach (var pedido in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.IdPedido)
-                </td>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => pedido.IdPedido)
+            </td>
 
-                <td>
-                    @Html.DisplayFor(modelItem => item.PrecioTotal)
-                </td>
-                
-            </tr>
+            <td>
+                @Html.DisplayFor(modelItem => pedido.PrecioTotal)
 
-            @*@foreach (var item2 in Model.Items)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item2.Cantidad)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item2.Precio)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item2.IdProducto)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item2.IdTienda)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item2.NombreProducto)
-                    </td>
+            </td>
 
-                </tr>
-            }*@
+        </tr>
+
+
+
 
         }
     </tbody>
+
 </table>
+@*@{var lista = @ViewBag.ListaItemsDePedidos;
+    //var modelo = Model.IdPedido;
+    foreach (var i in lista)
+    {
+        @if (i.IdPedido == Model.item.IdPedido)
+        {
+        <td>
+            @ViewBag.ListaItemsDePedidos.IdPedido
+
+        </td>
+        }
+    }
+}*@
